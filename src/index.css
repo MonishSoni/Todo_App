@@ -1,13 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
+  background-color: #edf3f3;
+}
+
+.additem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #14b999;
+  height: 12vh;
+  border-radius: 0 0 8px 8px;
+}
+
+.additem > input {
+  background-color: #41c6ad;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  padding: 15px 100px 15px 15px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+input::placeholder {
+  color: #ffffff;
+}
+
+.addbtn {
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  clip-path: circle();
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+
+.todolist {
+  padding: 8% 4%;
+}
+
+.list {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 35%;
+  margin-left: 10px;
+}
+
+.btns div {
+  width: 2px;
+  height: 30px;
+  background-color: #edf3f3;
+}
+
+.btns > svg {
+  cursor: pointer;
+  color: #41c6ad;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.btns > svg:hover {
+  color: lightcoral;
+}
+
+.hline {
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+  .additem {
+    height: 14vh;
+  }
+
+  .todolist {
+    padding: 2% 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .list {
+    width: 200px;
+    height: auto;
+    margin: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .btns {
+    justify-content: space-evenly;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .hline {
+    display: block;
+    width: 90%;
+    height: 1px;
+    background-color: #edf3f3;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .additem > input {
+    padding: 15px 85px 15px 15px;
+  }
+
+  .addbtn {
+    margin-left: -45px;
+  }
 }
