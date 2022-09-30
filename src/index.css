@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 * {
@@ -58,8 +58,6 @@ input::placeholder {
   transition: all 0.3s ease;
 }
 
-
-
 .todolist {
   padding: 8% 4%;
 }
@@ -103,6 +101,38 @@ input::placeholder {
   display: none;
 }
 
+#removeAll {
+  background-color: #14b999;
+  color: #ffffff;
+  position: fixed;
+  margin: 0;
+  right: 8%;
+  bottom: 3%;
+  font-weight: 600;
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+}
+
+#removeAll:hover {
+  background-color: lightcoral;
+  color: #edf3f3;
+}
+
+.list p {
+  border-bottom: 1px solid transparent;
+  text-transform: capitalize;
+}
+
+#check {
+  text-decoration: line-through;
+}
+.list .edit {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid lightcoral;
+}
+
 @media screen and (min-width: 500px) {
   .additem {
     height: 14vh;
@@ -124,6 +154,7 @@ input::placeholder {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    overflow: hidden;
   }
 
   .btns {
@@ -138,6 +169,11 @@ input::placeholder {
     height: 1px;
     background-color: #edf3f3;
     margin: 10px 0;
+  }
+
+  #removeAll {
+    right: 50px;
+    bottom: 30px;
   }
 }
 

@@ -1,18 +1,24 @@
-import React from 'react';
-import { MdOutlineDoneAll, MdDelete, MdMode,MdCheckCircle } from "react-icons/md";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { delTodo } from "../actions/index"
+import { MdDelete, MdMode, MdCheckCircle } from "react-icons/md";
 
-const List = () => {
+const List = ({ todoValue, id }) => {
+    const [editable, setEditable] = useState(false)
+    const [checked, setChecked] = useState(false)
+    const dispatch = useDispatch();
+
     return (
         <>
             <div className="list">
-                <p>Buy Milk and Apple Buy Milk and Apple</p>
+                <p id={checked ? "check" : ""} className={editable ? "edit" : ""} contentEditable={editable}>{todoValue}</p>
                 <div className="hline"></div>
                 <div className="btns">
-                    <MdCheckCircle />
+                    <MdCheckCircle onClick={() => setChecked((prev) => !prev)} />
                     <div></div>
-                    <MdMode />
+                    <MdMode onClick={() => setEditable((prev) => !prev)} />
                     <div></div>
-                    <MdDelete />
+                    <MdDelete onClick={() => dispatch(delTodo(id))} />
 
                 </div>
             </div>
